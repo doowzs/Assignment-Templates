@@ -1,0 +1,167 @@
+\usepackage{amsmath, amssymb}
+
+\usepackage[AutoFakeBold, AutoFakeSlant]{xeCJK}
+
+%\setCJKmainfont{SimSun}
+%\setCJKmonofont{KaiTi}
+%\setCJKsansfont{Microsoft YaHei} % or SimHei
+
+\newcommand{\song}{\CJKfamily{song}} 
+\newcommand{\hei}{\CJKfamily{hei}} 
+\newcommand{\kai}{\CJKfamily{kai}} 
+\newcommand{\fs}{\CJKfamily{fs}}
+
+\usepackage{standalone}
+\usepackage{booktabs, threeparttable}
+
+\usepackage{listings}
+\lstset{
+	language={[ISO]C++},
+    commentstyle=\color{red!50!green!50!blue!50},  
+  	rulesepcolor=\color{red!20!green!20!blue!20},  
+ 	keywordstyle=\color{blue!90}\bfseries,   
+  	showstringspaces=false, 
+  	stringstyle=\ttfamily,
+} 
+
+\usepackage{tikz}
+% We need lots of libraries...
+\usetikzlibrary{
+  arrows,
+  calc,
+  %fit,
+  %patterns,
+  %plotmarks,
+  shapes.geometric,%
+  shapes.misc,
+  shapes.symbols,
+  %shapes.arrows,
+  %shapes.callouts,
+  %shapes.multipart,
+  %shapes.gates.logic.US,
+  %shapes.gates.logic.IEC,
+  %circuits.logic.US,
+  %circuits.logic.IEC,
+  %circuits.logic.CDH,
+  %circuits.ee.IEC,
+  %datavisualization,
+  %datavisualization.formats.functions,
+  %er,
+  %automata,
+  %backgrounds,
+  %chains,
+  %topaths,
+  %trees,
+  %petri,
+  mindmap,
+  %matrix,
+  %calendar,
+  %folding,
+  %fadings,
+  %shadings,
+  %spy,
+  %through,
+  %turtle,
+  positioning,%
+  %scopes,
+  %decorations.fractals,
+  %decorations.shapes,
+  %decorations.text,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  %decorations.footprints,
+  %decorations.markings,
+  %shadows,
+  %lindenmayersystems,
+  %intersections,
+  %fixedpointarithmetic,
+  %fpu,
+  %svg.path,
+  %external,
+}%
+
+\tikzset{
+  textcircledstyle/.style={shape=circle,draw,inner sep=0.5pt}
+}
+\newcommand*\tikzcircled[1]{\tikz[baseline=(char.base)]{\node[textcircledstyle, line width=0.8pt] (char) {#1};}}
+
+\newcommand*{\ttbf}[1]{\texttt{\textbf{#1}}}
+
+% Allow font size at arbitrary size
+%\usepackage{lmodern}
+%\usepackage{fontenc}
+%\usepackage{avant}
+\usefonttheme{serif}
+
+
+%\usepackage{mathptmx} % Lucida Bright (SO Version)
+%\usepackage[small]{eulervm} % Euler VM%\usepackage{xeCJK}
+%\usepackage{euler}
+%\usepackage{palatino}
+%\usepackage{eulervm}
+%\usepackage{bookman}
+%\usepackage{chancery}
+%\usepackage{helvet}
+%\usepackage{utopia}
+%\usepackage{charter}
+%\usepackage{pifont}
+
+\usetheme{Madrid}
+%\usepackage[EU1,T1]{fontenc}
+
+\newcommand{\its}[1]{\textit{\structure{#1}}}
+\newcommand{\bfs}[1]{\textbf{\structure{#1}}}
+
+\newcommand{\ita}[1]{\textit{\alert{#1}}}
+\newcommand{\bfa}[1]{\textbf{\alert{#1}}}
+
+
+%\newcommand{\insertdescriptionitem}[1]{\textbf{#1}}
+
+% enumerate item symbol
+%\setbeamertemplate{enumerate items}[square]
+\setbeamertemplate{enumerate item}[square]
+\setbeamertemplate{enumerate subitem}[circle]
+\setbeamertemplate{enumerate subsubitem}[ball]
+
+% see above
+%\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[circle]
+
+
+% symbol in outline
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{frametitle continuation}[from second]
+
+% list the outline at the beginning of each section
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% list the outline at the beginning of each section
+\AtBeginSubsection[] % Do nothing for \subsection*
+{
+  \begin{frame}<beamer>
+    \frametitle{Contents}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% set color
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=green!50!black}
+
+\definecolor{mycolor}{rgb}{0.0,0.4,0.4} % use structure theme to change
+\setbeamercolor{structure}{fg=mycolor}
+
+
+% A bug, to support bibliography show
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
