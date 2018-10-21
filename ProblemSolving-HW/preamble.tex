@@ -96,16 +96,18 @@
 
 
 % Define theorem-like environments
-\usepackage[amsmath, thmmarks]{ntheorem}
+\usepackage[amsmath, thmmarks, framed]{ntheorem}
+\usepackage{framed}
 
 \theoremheaderfont{\kai\bfseries}
 \theoremstyle{break}
 \theorembodyfont{\song}
-\theoremseparator{}
-\newtheorem*{problem}{\faCheckSquareO \ Problem}
+\theoremseparator{\vspace{1mm}}
+\renewcommand*\FrameCommand{{\color{gray}\vrule width 3pt \hspace{10pt}}}
+\newframedtheorem{problem}{\faCheckSquareO \ Problem}
+
 \theorempostwork{\hrule}
 \newtheorem*{solution}{\faEdit \ Solution}
-\theorempostwork{\hrule}
 \newtheorem*{revision}{\faEdit \ Revision}
 
 \theoremstyle{plain}
@@ -113,7 +115,6 @@
 \newtheorem*{remark}{\faCommentingO \ Remark}
 
 \theoremstyle{break}
-\theorempostwork{\hrule}
 \theoremsymbol{\ensuremath{\Box}}
 \newtheorem*{proof}{\faEdit \ Proof}
 
