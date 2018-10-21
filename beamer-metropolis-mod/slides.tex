@@ -1,0 +1,120 @@
+\documentclass[10pt]{beamer}
+\include{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%title
+\title{Beamer Metropolis Mod README}
+\author[Tianyun Zhang]{张天昀}
+\institute[CS@NJU]{南京大学计算机科学与技术系\\ 171860508@smail.nju.edu.cn}
+\renewcommand{\today}{\number\year 年\number\month 月\number\day 日}
+\date{\today}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}{说明}
+    由于NJU beamer模板实在太丑了，于是我找了这个 3000+ Star 的 \href{https://github.com/matze/mtheme}{beamer 主题}来当我的新的beamer模板，顺便写一下beamer很多东西用法的memo。
+    
+    \begin{block}{LICENSE}
+        本文档使用CC-BY-SA 4.0协议授权。
+        \ccbysa
+    \end{block}
+\end{frame}
+
+\begin{frame}{目录}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{基础内容}
+\begin{frame}[fragile]{页面布局}
+    一般beamer总是从左往右、从上至下（居中）来分布页面内容，但是可以手动分栏。
+    \begin{verbatim}
+        \begin{columns}[T,onlytextwidth]
+            \column{0.5\textwidth}
+                Foo
+            \column{0.5\textwidth}
+                Bar
+        \end{columns}
+    \end{verbatim}
+    就会产生如下效果：
+    \begin{columns}[T,onlytextwidth]
+        \column{0.5\textwidth}
+        Foo
+        \column{0.5\textwidth}
+        Bar
+    \end{columns}
+\end{frame} 
+
+\begin{frame}[fragile]{页面元素}
+    页面元素有很多种，除了文字以外，有
+    公式：$$y = x^2$$
+    图片：\vspace{2mm} \\
+    \begin{center}
+        \includegraphics[scale=0.1]{demo.jpg}
+    \end{center}
+    
+    表格：\vspace{2mm} \\
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \multicolumn{2}{|c|}{111} & \multirow{2}{*}{FooBar} \\
+            \cline{1-2}
+            Foo & Bar &  \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{frame} 
+
+\begin{frame}{页面元素}
+    tikz绘制的图表：
+    \begin{figure}
+        \begin{tikzpicture}
+            \begin{axis}[
+                mbarplot,
+                xlabel={Foo},
+                ylabel={Bar},
+                width=0.9\textwidth,
+                height=6cm,
+            ]
+
+            \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+            \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+            \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+
+            \legend{lorem, ipsum, dolor}
+
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{页面元素}
+    代码块（页面需要fragile）：
+    \begin{verbatim}
+        int main(){return 0;}
+    \end{verbatim}
+    引言：
+    \begin{quote}
+        同*恋才是真爱。——鲁迅
+    \end{quote}
+    \begin{quote}
+        ‘The Kouga Ninja Scrolls’ is a historical fantasy novel about ninja written in 1958-1959 by the Japanese author Futaro Yamada. This is the first volume of the Ninja Scrolls series written by Yamada in 1958-2001. The book has been translated into English by Geoff Sant and was published by Del Rey in December 2006.
+        \begin{flushright}
+            -- from Wikipedia, the free encyclopedia
+        \end{flushright}
+    \end{quote}
+\end{frame}
+
+\begin{frame}[standout]
+    \textsl{The end.}
+\end{frame}
+\end{document}
