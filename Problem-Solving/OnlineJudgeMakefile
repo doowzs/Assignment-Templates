@@ -1,0 +1,9 @@
+CXX := g++
+FLAGS := -O2 -Wall
+
+%: %.cpp
+	$(CXX) $(FLAGS) -o $@.o $<
+	time ./$@.o < $@.in
+
+clean:
+	rm *.o
